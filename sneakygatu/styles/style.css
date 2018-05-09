@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+#github-link {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    height: 40px;
+    width: 40px;
+    z-index: 10;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-image: url("mjplogo.png");
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.4;
+    transition: all 0.25s;
+}
+
+#github-link:hover {
+    opacity: 0.8;
+    box-shadow: 0 0 6px #efefef;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #1E2326;
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: rgb(255, 255, 255) 7px solid;
+}
+
+.mainItem {
+    font-size: 50px;
+    position: relative;
+    background: #1E2326;
+}
+
+.mainItem:before,
+.mainItem:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 0, 0, 0);
+}
+
+.mainItem::before {
+    left: -2px;
+    animation: glitch-anim 1s infinite linear alternate-reverse;
+}
+
+.mainItem::after {
+    left: 2px;
+    animation: glitch-anim 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(70px, 450px, 76px, 0);
+    }
+    20% {
+        clip: rect(29px, 450px, 16px, 0);
+    }
+    40% {
+        clip: rect(76px, 450px, 3px, 0);
+    }
+    60% {
+        clip: rect(42px, 450px, 78px, 0);
+    }
+    80% {
+        clip: rect(15px, 450px, 13px, 0);
+    }
+    100% {
+        clip: rect(53px, 450px, 5px, 0);
+    }
+}
